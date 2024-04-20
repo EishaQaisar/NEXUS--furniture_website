@@ -1,7 +1,7 @@
 # NEXUS
 
 
- Furnish is a simple and clean ecommerce theme built for a fictional furniture business.
+ NEXUS is a simple and clean ecommerce theme built for a fictional furniture business.
  
  The project is built using HTML, CSS and Javascript.
  
