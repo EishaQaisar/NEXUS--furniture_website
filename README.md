@@ -1,6 +1,5 @@
 # NEXUS
 
- <img src="images/screenshot.png" alt="project">
 
  Furnish is a simple and clean ecommerce theme built for a fictional furniture business.
  
