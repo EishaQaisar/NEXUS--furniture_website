@@ -1,4 +1,4 @@
-# Furnish
+# NEXUS
 
  <img src="images/screenshot.png" alt="project">
 
@@ -16,6 +16,5 @@
 
  And Individual Page For Each Product
 
- The about and contact pages are not yet built.
  
- Link URL = https://abdulsamadayoade.github.io/Furnish
+ 
