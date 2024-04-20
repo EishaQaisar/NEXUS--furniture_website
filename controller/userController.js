@@ -1,11 +1,12 @@
 // userController.js
 
 const userModel = require('../model/userModel');
+const nodemailer=require("nodemailer")
 
 async function signup(req, res) {
-    const { username, password } = req.body;
+    const { username, password,email,verified } = req.body;
     try {
-        const newUser = await userModel.createUser(username, password);
+        const newUser = await userModel.createUser(username, password,email,verified);
         res.send('User registered successfully!');
     } catch (error) {
         res.status(400).send(error.message);

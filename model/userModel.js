@@ -1,15 +1,17 @@
 // userModel.js
 
-const User = require('../src/config'); // Assuming 'User' is your Mongoose model
+const User = require('../src/config'); 
 const bcrypt = require('bcrypt');
 
-async function createUser(username, password) {
+async function createUser(username, password,email) {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     const userData = {
         name: username,
-        password: hashedPassword
+        password: hashedPassword,
+        email:email,
+        verified:false
     };
 
     const existingUser = await User.findOne({ name: username });
