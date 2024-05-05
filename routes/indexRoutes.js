@@ -20,8 +20,10 @@ router.get('/contact', (req, res) => {
 router.get('/about', (req, res) => {
     res.render('about');
 });
-
-
+// router.get('/resetPassword', (req, res) => {
+//     res.render('resetPassword');
+// });
+ 
 
  
 

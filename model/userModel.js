@@ -11,7 +11,7 @@ async function createUser(username, password,email) {
         name: username,
         password: hashedPassword,
         email:email,
-        verified:false
+        verified:false,
     };
 
     const existingUser = await User.findOne({ name: username });
@@ -37,6 +37,8 @@ async function loginUser(username, password) {
 
     return user;
 }
+
+
 
 
 module.exports = {

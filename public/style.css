@@ -45,7 +45,8 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 2rem 0;
-    height: 7rem;
+    height: 6rem;
+    background-color: transparent ;
 }
 
 .nav-list {
@@ -105,6 +106,7 @@ a {
     background-size: cover; /* Ensure the background image covers the entire area */
     background-position: center;
     padding: 100px 0; /* Adjust padding as needed */
+    /* padding-top: 300px; */
 }
 
 
@@ -117,7 +119,7 @@ a {
     flex: 1;
     z-index: 1; /* Ensure text is above the image */
     padding: 0 20px; /* Add horizontal padding to the text */
-    color:white;
+    color:black;
 }
 
 .hero-image {
@@ -141,8 +143,9 @@ a {
 .col-2 {
     flex-basis: 50%;
     min-width: 30rem;
-    margin-right: 20px; /* Add margin between columns */
+    margin-right: 20px; 
 }
+
 
 /* .hero-info {
     flex-basis: 50%;
@@ -221,7 +224,7 @@ h1 {
 }
 
 .col-4 {
-    flex-basis: 25%;
+    /* flex-basis: 25%; */
     min-width: 20rem;
     padding: 1rem;
     margin-bottom: 5rem;
@@ -762,9 +765,11 @@ form a {
 
 /* Ensure proper layout for rows */
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Ensure equal spacing between columns */
+     display: flex;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between; 
+    gap:10px
+     /* Ensure equal spacing between columns */
 }
 .product-image img {
     width: 100%; /* Make the image fill its container */

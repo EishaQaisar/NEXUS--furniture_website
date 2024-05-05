@@ -71,11 +71,16 @@
                             <hr id="Indicator">
                         </div>
                         <form id="LoginForm" method="post" action="/login">
-                            <input type="text" placeholder="Username" name="username">
+                            <input type="text" placeholder="Username" name="username" id="usernameInput">
                             <input type="password" placeholder="Password" name="password">
                             <button type="submit" class="btn">Login</button>
-                            <a href="#">Forgot Password</a>
+                            <a href="/forget" id="forgetPasswordLink">Forgot Password</a>
+
+                            
+
+
                         </form>
+                        
                         <form id="RegForm" method="post" action="/signup">
                             <input type="text" placeholder="Username" name="username">
                             <input type="email" placeholder="Email" name="email">

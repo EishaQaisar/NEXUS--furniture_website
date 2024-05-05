@@ -26,7 +26,12 @@ const Loginschema = new mongoose.Schema({
     verified:{
         type:Boolean,
         required:true
+    },
+    token:{
+        type:String,
+        default:""
     }
+
 });
 
 // collection part

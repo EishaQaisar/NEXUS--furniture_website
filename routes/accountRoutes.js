@@ -1,4 +1,6 @@
 const express= require('express');
+const controller = require('../controller/userController');
+
 const router= express.Router();
 
 router.get('/', (req, res) => {
@@ -20,6 +22,16 @@ router.get('/contact', (req, res) => {
 router.get('/about', (req, res) => {
     res.render('about');
 });
+router.get('/forget', (req, res) => {
+
+
+    res.render('forget');
+    
+});
+
+
+// router.get('/forget', controller.forgetPassword); 
+
 
 
 
