@@ -20,7 +20,15 @@
                 <a class="logo" href="/index">NEXUS</a>
                 <ul class="nav-list">
                     <li><a href="/index">Home</a></li>
-                    <li><a href="/shop">Shop</a></li>
+                    <!-- <li><a href="/shop">Shop</a></li> -->
+                    <li class="dropdown">
+                        <a href="/shop" class="dropbtn">Shop</a>
+                        <div class="dropdown-content">
+                            <a href="#">Category 1</a>
+                            <a href="#">Category 2</a>
+                            <a href="#">Category 3</a>
+                        </div>
+                    </li>
                     <li><a href="/account">Account</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
@@ -71,22 +79,24 @@
     </header>
 
     <!-- FEATURED CATEGORIES -->
-
+ 
     <section class="categories">
         <div class="small-container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 ">
                     <img src="/images/category-1.jpg">
                 </div>
-                <div class="col-3">
+                <div class="col-3 ">
                     <img src="/images/category-2.jpg">
                 </div>
-                <div class="col-3">
+                <div class="col-3 ">
                     <img src="/images/category-3.jpg">
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
+ 
+    
 
     <!-- FEATURED PRODUCTS -->
 
@@ -94,9 +104,9 @@
         <h2 class="title">Featured Products</h2>
         <div class="medium-container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 ">
                     <img src="/images/coffee-table2.jpg">
-                    <h4>Chair Paded Seat</h4>
+                    <h4>Coffee Tables</h4>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -108,7 +118,7 @@
                 </div>
                 <div class="col-3">
                     <img src="/images/chair2.jpg">
-                    <h4>Chelvee Clock</h4>
+                    <h4>Chairs</h4>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -120,7 +130,7 @@
                 </div>
                 <div class="col-3">
                     <img src="/images/console-2.jpg">
-                    <h4>Casper Chair</h4>
+                    <h4>Consoles</h4>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -152,96 +162,44 @@
         <small>Latest Collection</small>
         <h2 class="title">---CATEGORIES---</h2>
         <div class="medium-container">
-            <div class="row" style="border: 1px solid black;">
-                <div class="col-6 "style="border:1px solid black; height: 100%;" >
+            <div class="row" >
+                <div class="col-6 "style=" height: 100%;" >
                     <a href="shop/rubber-plant.html">
                         <div class="product-image">
-                            <img src="/images/3.jpg" alt="Rubber Plant" style="width: 100%;">
+                            <img src="/images/bed.jpg" alt="Rubber Plant" style="width: 100%;">
                             <div class="overlay">
-                                <h4>Rubber Plant</h4>
+                                <h4 class="product-name">The Bedroom Collection</h4>
                                 
-                                <p>$15</p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-6" style="border:1px solid black" >
+                <div class="col-6"  >
                     <a href="shop/tea-kettle.html">
-                        <div class="product-image">
-                            <img src="/images/3.jpg" alt="Tea Kettle" >
+                        <div class="product-image" style="height: 100%;">
+                            <img src="/images/dining1.jpg" alt="Tea Kettle" >
                             <div class="overlay">
-                                <h4 class="product-name">Tea Kettle</h4>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half"></i>
-                                </div>
-                                <p class="product-price">$15</p>
+                                <h4 class="product-name">The Dining Collection</h4>
+                                
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 .col-md-8">
+            <div class="row " style="margin-top: 10px;">
+                <div class="col-12 .col-md-8" >
                     <a href="shop/desk-decor.html" class="product-link">
                         <div class="product-image">
-                            <img src="/images/3.jpg" alt="Desk Decor">
+                            <img src="/images/4.jpg" alt="Desk Decor" >
                             <div class="overlay">
-                                <h4 class="product-name">Desk Decor</h4>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="product-price">$15</p>
+                                <h4 class="product-name">The Living Collection</h4>
+                               
                             </div>
                         </div>
                     </a>
                 </div>
                 </div>
-            <div class="row">
-                <div class="col-12 .col-md-8">
-                    <a href="shop/desk-decor.html" class="product-link">
-                        <div class="product-image">
-                            <img src="/images/3.jpg" alt="Desk Decor">
-                            <div class="overlay">
-                                <h4 class="product-name">Desk Decor</h4>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 .col-md-4">
-                    <a href="shop/wall-paint.html" class="product-link">
-                        <div class="product-image">
-                            <img src="/images/3.jpg" alt="Wall Paint">
-                            <div class="overlay">
-                                <h4 class="product-name">Wall Paint</h4>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </section>
     
@@ -308,11 +266,11 @@
 
     <!-- OFFER SECTION -->
 
-    <section class="offer">
+    <!-- <section class="offer">
         <div class="small-container">
             <div class="row">
                 <div class="col-2">
-                    <img src="/images/gal.jpg" class="offer-image">
+                    <img src="/images/ins.jpg" class="offer-image">
                 </div>
                 <div class="col-2">
                     <h3>INSPIRATION</h3>
@@ -322,7 +280,47 @@
                 </div>
             </div>
         </div>
+    </section> -->
+    <section class="offer">
+        <div class="small-container">
+            <div class="row">
+                <!-- Left Side: Images -->
+                <div class="col-6">
+                    <div class="row">
+                        
+                        <div class="col-3">
+                            <img src="/images/ins1.jpg" class="offer-image">
+                        </div>
+                        <div class="col-3">
+                            <img src="/images/ins2.jpg" class="offer-image">
+                        </div>
+                        <!-- Repeat the above two divs for the remaining images -->
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-3">
+                            <img src="/images/ins5.jpg" class="offer-image">
+                        </div>
+                        <div class="col-3">
+                            <img src="/images/ins4.jpg" class="offer-image">
+                        </div>
+                        <!-- Repeat the above two divs for the remaining images -->
+                    </div>
+                    
+                </div>
+                <!-- Right Side: Text -->
+                <div class="col-6">
+                    <div class="col-6" style="width: 100%;">
+                        <h3>INSPIRATION</h3>
+                        <small>Experiencing a creative block?</small>
+                        <p> Find inspiration at our furniture website! Explore our curated collection of stylish and functional pieces to ignite your imagination. Whether you're revamping a room or starting from scratch, our diverse range of furniture will help you break through that inspiration block and create the perfect living space.</p>
+                        <a href="#">Experience the gallery&gt;&gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
 
     <!-- TESTIMONIAL -->
 

@@ -302,7 +302,7 @@ small {
 
 .offer {
     margin: 5rem 0;
-    background-color: #e3ebf0;
+    background-color: #c0c2b8;
     margin-top: 8rem;
     padding: 7rem 0 5rem;
 }
@@ -351,7 +351,7 @@ small {
 
 .fas.fa-quote-left {
     font-size: 3.4rem;
-    color: #f42153;
+    color: #83733fa4;
 }
 
 .col-3 p {
@@ -468,7 +468,7 @@ select {
 .pagination span {
     display: inline-block;
     height: 4rem;
-    width: 4rem;
+    width: 14rem;
     line-height: 4rem;
     border: 1px solid #555;
     font-size: 1.5rem;
@@ -768,7 +768,8 @@ form a {
      display: flex;
     /*flex-wrap: wrap;*/
     justify-content: space-between; 
-    gap:10px
+    gap:10px;
+   
      /* Ensure equal spacing between columns */
 }
 .product-image img {
@@ -850,4 +851,63 @@ form a {
     .account .col-2:first-child {
         display: none;
     }
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* for featured products to hover: */
+ .featured .col-3 {
+  
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.featured .col-3:hover {
+    transform: translateY(-10px);
+}
+.latest-products.col-6 {
+  
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.latest-products .col-6:hover {
+    transform: translateY(-10px);
+}
+.latest-products.col-12 {
+  
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.latest-products .col-12:hover {
+    transform: translateY(-10px);
+}
+.underlined a {
+    text-decoration: underline;
+    color: black; /* Set default color */
+    transition: color 0.3s
+}
+
+.underlined a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color:gray; /* Change color on hover */
 }
