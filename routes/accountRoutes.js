@@ -3,9 +3,9 @@ const controller = require('../controller/userController');
 
 const router= express.Router();
 
-router.get('/', (req, res) => {
-    res.render('account');
-});
+// router.get('/', (req, res) => {
+//     res.render('account');
+// });
 
 router.get('/index', (req, res) => {
     res.render('index');

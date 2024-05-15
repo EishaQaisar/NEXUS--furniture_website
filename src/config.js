@@ -34,7 +34,12 @@ const Loginschema = new mongoose.Schema({
 
 });
 
+// const sessionSecret="mySessionSecret";
+
 // collection part
 const collection = new mongoose.model("books", Loginschema);
 
-module.exports = collection;
+module.exports = {
+    collection
+}
+    ;

@@ -1,6 +1,6 @@
 // userModel.js
 
-const User = require('../src/config'); 
+const User = require('../src/config').collection; 
 const bcrypt = require('bcrypt');
 
 async function createUser(username, password,email) {
@@ -18,6 +18,11 @@ async function createUser(username, password,email) {
     if (existingUser) {
         throw new Error('User already exists. Please choose a different username.');
     }
+    const existingUser1 = await User.findOne({ email: email });
+    if (existingUser1) {
+        throw new Error('User already exists for this email. Please choose a different email.');
+    }
+
 
     const newUser = await User.create(userData); // Use the create method to insert a new document
     return newUser;
@@ -29,6 +34,7 @@ async function loginUser(username, password) {
     if (!user) {
         throw new Error('User not found.');
     }
+    
 
     const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {

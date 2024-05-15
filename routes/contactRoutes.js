@@ -17,9 +17,9 @@ router.get('/about', (req, res) => {
     res.render('about');
 });
 
-router.get('/account', (req, res) => {
-    res.render('account');
-});
+// router.get('/account', (req, res) => {
+//     res.render('account');
+// });
 
 
 

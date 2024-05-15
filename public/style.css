@@ -911,3 +911,70 @@ form a {
     text-decoration: underline; /* Add underline on hover */
     color:gray; /* Change color on hover */
 }
+
+.blackbutton btn{
+    border: .1rem solid black;
+    color: black;
+}
+.comment-section {
+    margin-top: 50px;
+    width:70%;
+}
+
+.comments {
+    margin-bottom: 20px;
+}
+
+
+.comments h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+#comments-list {
+    padding: 0;
+    background-color: #f9f9f9;
+
+
+}
+
+#comments-list li {
+    margin-bottom: 0px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+    color:#4c4c43
+}
+
+.comment-form{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    align-items: center;
+}
+.comment-form textarea {
+    width: 60%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.comment-form button {
+    border: .1rem solid black;
+    color: black;
+    padding: 5px 10px;
+    font-size: 1.8rem;
+    font-family: "EBGaramondItalic";
+    transition: all .3s;
+}
+
+.comment-form button:hover {
+    background-color: hsl(161, 68%, 17%);
+    color: white;
+}
+
+
+/* Adjust styles as needed */
