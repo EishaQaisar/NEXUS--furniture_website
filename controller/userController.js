@@ -15,6 +15,10 @@ const Product = require('../model/product')
 const Wishlist=require('../model/wishlist')
 const url=require('url')
 const Cart = require('../model/cart');
+const Discount = require('../model/discount'); // Assuming you have a Discount model
+const Order = require('../model/order');
+
+
 
 
 
@@ -389,24 +393,32 @@ const addToCart = async (req, res) => {
         if (userId) {
             cart = await Cart.findOne({ user: userId });
             if (!cart) {
-                cart = await Cart.create({ user: userId, items: [{ product: product._id, quantity }] });
+                // cart = await Cart.create({ user: userId, items: [{ product: product._id, quantity }] });
+                cart = await Cart.create({ user: userId, items: [{ product: product._id, name: product.name, price: product.price, quantity }], totalAmount: product.price * quantity });
+
             } else {
                 const existingItem = cart.items.find(item => item.product.equals(product._id));
                 if (existingItem) {
                     existingItem.quantity += quantity;
+                    cart.totalAmount += product.price * quantity;
                 } else {
-                    cart.items.push({ product: product._id, quantity });
+                    cart.items.push({ product: product._id, name: product.name, price: product.price, quantity });
+                    cart.totalAmount += product.price * quantity; // Update totalAmount
+
                 }
                 await cart.save();
             }
         } else {
-            req.session.cart = req.session.cart || { items: [] };
+            req.session.cart = req.session.cart || { items: [],totalAmount:0 };
             const existingProductIndex = req.session.cart.items.findIndex(item => item.product.toString() === product._id.toString());
             if (existingProductIndex !== -1) {
                 req.session.cart.items[existingProductIndex].quantity += quantity;
             } else {
-                req.session.cart.items.push({ product: product._id, quantity });
+                req.session.cart.items.push({ product: product._id, name: product.name, price: product.price, quantity });
+
             }
+            req.session.cart.totalAmount += product.price * quantity; // Update totalAmount
+
             console.log(req.session.cart)
         }
 
@@ -438,6 +450,155 @@ const viewCart = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+const loadCheckout = async (req, res) => {
+    try {
+        const userId = req.session.user_id;
+
+        if (userId) {
+            const cart = await Cart.findOne({ user: userId }).populate('items.product');
+            const subtotal = cart.totalAmount;
+            const tax = 0.1 * subtotal;
+
+            const totalAmount = subtotal + tax;
+
+            res.render('checkout', { cart,  totalAmount,displayDiscount:'true' });
+        } else {
+            console.log(req.session.cart)
+            const cart = req.session.cart ;
+            const subtotal = cart.totalAmount;
+            
+            
+            const tax = 0.1 * subtotal;
+            const totalAmount = subtotal + tax;
+            res.render('checkout', { cart,  totalAmount,displayDiscount:'true' });
+
+        }
+    } catch (error) {
+        console.error('Error viewing cart:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+
+async function applyDiscount(req, res) {
+    try {
+        const { discountCode } = req.body;
+        let cart;
+
+        const userId = req.session.user_id;
+
+        if (userId) {
+            cart = await Cart.findOne({ user: userId }).populate('items.product');
+        } else {
+            cart = req.session.cart;
+        }
+        console.log(cart)
+
+        if (!cart) {
+            // Handle case where cart is not found
+            return res.render('checkout', { errorMessage: 'Cart not found' });
+        }
+
+        // Find the discount code in the database
+        const discount = await Discount.findOne({ code: discountCode });
+        console.log(discount);
+
+        if (discount) {
+            const discountedAmount = (discount.amount / 100) * cart.totalAmount;
+
+            // Subtract the discounted amount from the total amount in the cart
+
+            // Recalculate total amount including taxes
+            let subtotal = cart.totalAmount;
+            subtotal-=discountedAmount;
+            const tax = 0.1 * subtotal;
+            const totalAmount = subtotal + tax;
+
+            console.log('ok')
+
+            // Save the updated total amount in the cart
+            console.log('ok')
+
+
+
+            // Render the checkout page with a success message
+            return res.render('checkout', { cart, totalAmount, displayDiscount: '' });
+        } else {
+            const subtotal = cart.totalAmount;
+            const tax = 0.1 * subtotal;
+
+            const totalAmount = subtotal + tax;
+            return res.render('checkout', { cart, totalAmount, displayDiscount: 'Invalid discount code' });
+        }
+    } catch (error) {
+        // Render the checkout page with an error message
+        console.log("eorr")
+        return res.render('checkout', { errorMessage: 'Failed to apply discount' });
+    }
+};
+
+
+
+
+async function processOrder(req, res) {
+    try {
+        const { paymentMethod,  email, totalAmount } = req.body;
+        const userId = req.session.user_id;
+        let cartItems = [];
+
+        if (userId) {
+            const cart = await Cart.findOne({ user: userId }).populate('items.product');
+            if (!cart) throw new Error('Cart not found');
+            cartItems = cart.items.map(item => ({
+                productId: item.product._id,
+                name: item.product.name,
+                price: item.product.price,
+                quantity: item.quantity
+            }));
+        } else {
+            cartItems = req.session.cart.items.map(item => ({
+                productId: item.product,
+                name: item.name,
+                price: item.price,
+                quantity: item.quantity
+            }));
+        }
+
+       
+
+        const order = new Order({
+            items: cartItems,
+            totalAmount:totalAmount,
+            paymentMethod,
+            email,
+            user: userId 
+        });
+        await order.save();
+
+        // if (userId) {
+        //     await Cart.findOneAndDelete({ user: userId });
+        // } else {
+        //     req.session.cart.items = [];
+        // }
+
+        res.redirect('index');
+    } catch (error) {
+        console.error('Error processing order:', error);
+        res.render('checkout', { errorMessage: 'Failed to process order' });
+    }
+}
+const processLogout = async (req, res) => {
+    try {
+         req.session.user_id=null
+        res.render('index');
+    } catch (error) {
+        console.error('Error LOGGING OUT:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+
+
 
 module.exports = {
     forgetPassword,
@@ -452,5 +613,9 @@ module.exports = {
     addToWishlist,
     viewWishlist,
     addToCart,
-    viewCart
+    viewCart,
+    loadCheckout,
+    applyDiscount,
+    processOrder,
+    processLogout
 };

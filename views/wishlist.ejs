@@ -72,10 +72,16 @@
                         </div>
                         
                         <form id="Form" method="post" >
-                            <% wishlist.product.forEach(product => { %>
-                                <li><%= product.name %> - <%= product.price %></li>
-                            <% }); %>
-                    
+                            <% if (wishlist && wishlist.product && wishlist.product.length > 0) { %>
+                                <ul>
+                                    <% wishlist.product.forEach(product => { %>
+                                        <li><%= product.name %> - <%= product.price %></li>
+                                    <% }); %>
+                                </ul>
+                            <% } else { %>
+                                <p>Your wishlist is empty.</p>
+                            <% } %>
+                            
                         </form>
                     </div>
                 </div>

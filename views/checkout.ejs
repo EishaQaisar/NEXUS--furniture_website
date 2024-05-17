@@ -96,7 +96,7 @@
     </section> -->
     <section class="cart">
         <div class="container">
-            <div class="shopping-cart1">
+            <div class="shopping-cart1" style="height: 600px;">
                 <!-- Title -->
                 <div class="title1">
                     Shopping Bag
@@ -116,11 +116,8 @@
                             <div class="description1">
                                 <!-- Display product details like name, color, etc. -->
                                 <!-- <span><%= item.product %></span> -->
-                                <!-- Add more details as needed -->
                                 <span><%= item.name %></span>
-
                                 <span>Category: <%= item.category %></span>
-
                             </div>
 
                             <div class="quantity1">
@@ -131,21 +128,46 @@
                             <div class="total-price1">
                                 <!-- Display the total price for this item -->
                                 <span><%= item.price %></span>
-
-
                             </div>
-                            
-
                         </div>
                         
-                        
-                        
                     <% }); %>
-                    <div style="display: block; text-align: end; padding-right: 200px;">
-                        <div><span>Subtotal:</span> <span><%= cart.totalAmount %></span></div>
-                        <a href="/checkout"><button class="btn"  style="color:black;width:110px; height: 40px;">Checkout</button></a>
-                        
-                     </div>
+                    <form action="/processOrder" method="post" style="text-align: center;">
+                        <div style="display: block; text-align: end; padding-right: 200px;">
+                            <div><span>Suyuubtotal:</span> <span><%= cart.totalAmount %></span></div>
+                            <div><span>Total Amount (including tax):</span> <span><%= totalAmount %></span></div>
+                         </div>
+                         
+                        <div class="payment-method" style="margin-top: 100px;">
+                            <label for="payment-method">Select Payment Method:</label>
+                            <select id="payment-method" name="paymentMethod">
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="online">Online Payment</option>
+                            </select>
+                        </div>
+                        <div class="input" style="display: inline-flex; align-items: center ;gap:20px;">
+                            <label for="input">Email:</label>
+                            <input style="width:200px;" type="email" id="email" name="email" placeholder="Enter email" required>
+                        </div>
+
+
+                      
+                        <div>
+                            <input type="hidden" name="totalAmount" value="<%= totalAmount %>">
+
+                            <a href="/checkout"><button class="btn" type="submit"  style="color:black;width:120px; height: 40px;">Confirm</button></a>
+                        </div>
+                     </form>
+                     <form style="text-align: center; " action="/applyDiscount" method="post">
+                        <% if (displayDiscount ) { %>
+                            <div class="discount-code" style="display: inline-flex; align-items: center ;gap:20px;">
+                                <label for="discount-code">Discount Code:</label>
+                                <input style="width:200px;" type="text" id="discount-code" name="discountCode" placeholder="Enter discount code">
+                                <button class="btn">Apply</button>
+                            </div>
+                            <% } %>
+                     </form>
+                     
                      
 
                 <% } else { %>
@@ -154,6 +176,7 @@
                 <% } %>
                 
             </div>
+        
             
             <!-- Add a checkout button if needed -->
             <!-- <button class="checkout">Checkout</button> -->
