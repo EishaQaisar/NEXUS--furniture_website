@@ -60,8 +60,8 @@ const sendPasswordResetEmail = async (name, email, token) => {
             requireTLS: true,
             secure: false,
             auth: {
-                user: 'f219108@cfd.nu.edu.pk',
-                pass: 'eishaNUCES9108$'
+                user: '',
+                pass: ''
             },
             tls: {
                 rejectUnauthorized: false // Accept self-signed certificates
@@ -206,8 +206,8 @@ const sendotp = async (username, email, verified) => {
             requireTLS: true,
             secure: false,
             auth: {
-                user: 'f219108@cfd.nu.edu.pk',
-                pass: 'eishaNUCES9108$'
+                user: '',
+                pass: ''
             },
             tls: {
                 rejectUnauthorized: false // Accept self-signed certificates
