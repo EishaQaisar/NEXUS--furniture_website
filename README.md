@@ -45,16 +45,22 @@ It combines a **responsive Bootstrap frontend** with a **Node.js/Express.js + Mo
 ```bash
 git clone https://github.com/EishaQaisar/NEXUS--furniture_website.git
 cd NEXUS--furniture_website
-2️⃣ Install dependencies
+```
+### 2️⃣ Install dependencies
+```bash
+
 npm install
-3️⃣ Set up environment variables
+```
+###3️⃣ Set up environment variables
 Create a .env file in the root folder:
-
-.env
+```bash
 MONGO_URI=your_mongo_connection_string
+```
 
-4️⃣ Run the app
+###4️⃣ Run the app
 For development (with nodemon):
+```bash
 
 nodemon src/index.js
+```
 
