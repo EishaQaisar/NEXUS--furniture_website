@@ -1,49 +1,66 @@
-NEXUS
+# 🛋️ NEXUS – Full-Stack E-Commerce Furniture Website
 
-NEXUS is a full-stack e-commerce web app for a fictional furniture brand. It features a responsive Bootstrap UI on the front end and a Node.js/Express.js + MongoDB backend with secure, email-verified authentication.
+NEXUS is a **full-stack e-commerce web app** built for a fictional furniture brand.  
+It combines a **responsive Bootstrap frontend** with a **Node.js/Express.js + MongoDB backend**, featuring secure, **email-verified authentication** and a smooth shopping experience.  
 
-Tech Stack
+---
 
-Frontend: HTML, CSS, Bootstrap, JavaScript
+## 🚀 Tech Stack
+- 🎨 **Frontend:** HTML, CSS, Bootstrap, JavaScript  
+- ⚙️ **Backend:** Node.js, Express.js  
+- 🗄️ **Database:** MongoDB (Mongoose)  
 
-Backend: Node.js, Express.js
+---
 
-Database: MongoDB (Mongoose)
+## ✨ Key Features
+- 🔑 **Email-verified Authentication** – Sign up, login, logout, with email validation  
+- 🛍️ **Product Catalog** – Grid & list views, search, filters, product detail pages  
+- 🛒 **Shopping Cart** – Add/remove/update quantities; persists across sessions  
+- 💳 **Checkout** – Apply discount codes/coupons, view order summary & confirmation  
+- 💬 **Reviews & Comments** – Authenticated users can leave feedback  
+- 👤 **Account Area** – Profile updates, order history, saved addresses  
+- 📱 **Responsive UI** – Mobile-first design powered by Bootstrap  
+- 🔒 **Secure APIs** – RESTful routes with input validation & error handling  
 
-Key Features
+---
 
-Email-verified Auth: Sign up, login, logout; validation via email.
+## 📑 Pages / Routes
+| Page                  | Description |
+|-----------------------|-------------|
+| 🏠 **Homepage**       | Featured products & brand highlights |
+| 🛍️ **Shop**           | Product catalog with filters & search |
+| 📦 **Product Detail** | Individual product pages |
+| 🛒 **Cart**           | Shopping cart with live updates |
+| 💳 **Checkout**       | Order summary, discounts, confirmation |
+| 👤 **Account**        | Profile, orders, addresses |
+| ℹ️ **About**          | Brand info |
+| 📞 **Contact**        | Contact form |
+| 🔐 **Auth**           | Login / Signup with email verification |
 
-Product Catalog: Grid/list views, search/filter, per-product detail pages.
+---
 
-Shopping Cart: Add/remove/update quantities; persistent across sessions.
+## ⚡ Getting Started
 
-Checkout: Apply discount codes/coupons; order summary and confirmation.
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/EishaQaisar/NEXUS--furniture_website.git
+cd NEXUS--furniture_website
+2️⃣ Install dependencies
+bash
+Copy
+Edit
+npm install
+3️⃣ Set up environment variables
+Create a .env file in the root folder:
 
-Comments/Reviews: Authenticated users can comment on products.
+env
+Copy
+Edit
+MONGO_URI=your_mongo_connection_string
 
-Account Area: View/update profile, order history, saved addresses.
+4️⃣ Run the app
+For development (with nodemon):
 
-Responsive UI: Mobile-first layout with Bootstrap.
-
-Secure APIs: RESTful routes with input validation and error handling.
-
-Pages / Routes
-
-Homepage
-
-Shop (catalog, filters)
-
-Product Detail (individual page for each product)
-
-Cart
-
-Checkout
-
-Account (profile, orders)
-
-About
-
-Contact
-
-Auth (Login / Signup with email verification)
+bash
+Edit
+nodemon src/index.js
