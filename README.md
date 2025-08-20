@@ -51,16 +51,17 @@ cd NEXUS--furniture_website
 
 npm install
 ```
-###3️⃣ Set up environment variables
+### 3️⃣ Set up environment variables
 Create a .env file in the root folder:
 ```bash
 MONGO_URI=your_mongo_connection_string
 ```
 
-###4️⃣ Run the app
+### 4️⃣ Run the app
 For development (with nodemon):
 ```bash
 
 nodemon src/index.js
 ```
+
 
