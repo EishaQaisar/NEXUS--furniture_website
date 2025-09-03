@@ -52,10 +52,12 @@ It combines a **responsive Bootstrap frontend** with a **Node.js/Express.js + Mo
   <img src="./images/categories.jpg" alt="Categories" width="250" />
 </p>
 
-### 🛋️ Bedroom & Dining  
+### 🛋️ Collections  
 <p align="center">
   <img src="./images/bedroom.jpg" alt="Bedroom" width="250" />
   <img src="./images/dining.jpg" alt="Dining" width="250" />
+  <img src="./images/living.jpg" alt="Living" width="250" />
+
 </p>
 
 ### ✨ Featured & Gallery  
@@ -104,6 +106,7 @@ For development (with nodemon):
 
 nodemon src/index.js
 ```
+
 
 
 
