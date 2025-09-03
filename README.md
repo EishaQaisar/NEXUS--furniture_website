@@ -38,6 +38,23 @@ It combines a **responsive Bootstrap frontend** with a **Node.js/Express.js + Mo
 | 🔐 **Auth**           | Login / Signup with email verification |
 
 ---
+## 📸 Screenshots  
+
+![Homepage](./home.jpg)  
+![Shop](./shop.jpg)  
+![Cart](./cart.jpg)  
+![Categories](./categories.jpg)  
+![Bedroom](./bedroom.jpg)  
+![Dining](./dining.jpg)  
+![Featured](./featured.jpg)  
+![Gallery](./gallery.jpg)  
+![Gallery 2](./gallery2.jpg)  
+![Gallery 3](./gallery3.jpg)  
+![Inspiration](./inspiration.jpg)  
+![Login](./login.jpg)  
+![Footer](./footer.jpg)  
+
+---
 
 ## ⚡ Getting Started
 
@@ -63,5 +80,6 @@ For development (with nodemon):
 
 nodemon src/index.js
 ```
+
 
 
