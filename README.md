@@ -40,21 +40,45 @@ It combines a **responsive Bootstrap frontend** with a **Node.js/Express.js + Mo
 ---
 ## 📸 Screenshots  
 
-![Homepage](./home.jpg)  
-![Shop](./shop.jpg)  
-![Cart](./cart.jpg)  
-![Categories](./categories.jpg)  
-![Bedroom](./bedroom.jpg)  
-![Dining](./dining.jpg)  
-![Featured](./featured.jpg)  
-![Gallery](./gallery.jpg)  
-![Gallery 2](./gallery2.jpg)  
-![Gallery 3](./gallery3.jpg)  
-![Inspiration](./inspiration.jpg)  
-![Login](./login.jpg)  
-![Footer](./footer.jpg)  
+### 🏠 Homepage & Shop  
+<p align="center">
+  <img src="./images/home.jpg" alt="Homepage" width="250" />
+  <img src="./images/shop.jpg" alt="Shop" width="250" />
+</p>
+
+### 🛒 Cart & Categories  
+<p align="center">
+  <img src="./images/cart.jpg" alt="Cart" width="250" />
+  <img src="./images/categories.jpg" alt="Categories" width="250" />
+</p>
+
+### 🛋️ Bedroom & Dining  
+<p align="center">
+  <img src="./images/bedroom.jpg" alt="Bedroom" width="250" />
+  <img src="./images/dining.jpg" alt="Dining" width="250" />
+</p>
+
+### ✨ Featured & Gallery  
+<p align="center">
+  <img src="./images/featured.jpg" alt="Featured Products" width="250" />
+  <img src="./images/gallery.jpg" alt="Gallery" width="250" />
+  <img src="./images/gallery2.jpg" alt="Gallery 2" width="250" />
+  <img src="./images/gallery3.jpg" alt="Gallery 3" width="250" />
+</p>
+
+### 💡 Inspiration & Login  
+<p align="center">
+  <img src="./images/inspiration.jpg" alt="Inspiration" width="250" />
+  <img src="./images/login.jpg" alt="Login" width="250" />
+</p>
+
+### 📑 Footer  
+<p align="center">
+  <img src="./images/footer.jpg" alt="Footer" width="250" />
+</p>
 
 ---
+
 
 ## ⚡ Getting Started
 
@@ -80,6 +104,7 @@ For development (with nodemon):
 
 nodemon src/index.js
 ```
+
 
 
 
