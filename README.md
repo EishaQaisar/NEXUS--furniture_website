@@ -108,6 +108,13 @@ nodemon src/index.js
 ```
 
 
+## 📄 License
+
+This project is licensed under the **MIT License** – you are free to use, modify, and distribute this project for personal or commercial purposes as long as proper credit is given.  
+See the [LICENSE](./LICENSE) file for full details.
+
+
+
 
 
 
